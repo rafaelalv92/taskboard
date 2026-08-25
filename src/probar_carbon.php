@@ -1,0 +1,9 @@
+<?php
+require __DIR__ . '/vendor/autoload.php';
+use Carbon\Carbon;
+$hoy = Carbon::now();
+$vencimiento = Carbon::parse('2026-08-11');
+echo "Hoy es: " . $hoy->toDateString() . PHP_EOL;
+echo "La tarea vence: " . $vencimiento->toDateString() . PHP_EOL;
+echo "Días restantes: " . $hoy->diffInDays($vencimiento) . PHP_EOL;
+echo "En palabras: vence " . $vencimiento->diffForHumans() . PHP_EOL;
